@@ -22,5 +22,9 @@ build: build-linux-amd64
 .PHONY: build
 
 build-linux-amd64:
-	env CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o bin/$(NAME) -ldflags "$(LDFLAGS)" ./cmd
+	env CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -ldflags "$(LDFLAGS)" -o bin/$(NAME) ./cmd
 .PHONY: build-amd64
+
+clean:
+	rm -r ./bin
+.PHONY: clean

@@ -9,16 +9,17 @@ Lightweight Go application template includes:
 - pre-configured `Makefile`
 - build version based on a Git branch and the last commit (like `go-app-template@master-26a6e8a`)
 - `--version` and `--help` commands
-- application waits for user interruption (Ctrl+C)
+- application waits for user interruption (<kbd>Ctrl</kbd> + <kbd>C</kbd>)
 - travis-ci config
 
 ## Instructions
 - clone repository
     ```bash
+    cd /tmp
     git clone https://github.com/antonfisher/go-app-template.git
     mv do-app-template YOUR_PROJECT_FOLDER
     ```
-- remove old `.git` folder and init new git repository
+- remove old git folder and init new git repository
     ```bash
     cd YOUR_PROJECT_FOLDER
     rm -r .git README.md
@@ -27,7 +28,10 @@ Lightweight Go application template includes:
 - replace `NAME` and `REPOSITORY` in `Makefile`
 - replace imports in `cmd/main.go` file
 - remove or update `LICENSE.md` file
-- build project `make`
+- build project
+    ```bash
+    make
+    ````
 
 ## Build
 

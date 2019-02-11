@@ -1,27 +1,38 @@
-# go-app-template
+# Go Application Template
 
 [![Build Status](https://travis-ci.org/antonfisher/go-app-template.svg?branch=master)](https://travis-ci.org/antonfisher/go-app-template)
 [![Go Report Card](https://goreportcard.com/badge/github.com/antonfisher/go-app-template)](https://goreportcard.com/report/github.com/antonfisher/go-app-template)
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
 
-# Go Application Template
-
+Lightweight Go application template includes:
+- file structure backbone
 - pre-configured `Makefile`
-- build with version based on Git branch and commit (``)
+- build version based on a Git branch and the last commit (like `go-app-template@master-26a6e8a`)
+- `--version` and `--help` commands
+- application waits for user interruption (Ctrl+C)
+- travis-ci config
 
 ## Instructions
 - clone repository
-- remove `.git` folder
     ```bash
-    rm -r .git
+    git clone https://github.com/antonfisher/go-app-template.git
+    mv do-app-template YOUR_PROJECT_FOLDER
     ```
-- replace REPOSITORY name in
-    - `Makefile`
-    - `README.md`
+- remove old `.git` folder and init new git repository
+    ```bash
+    cd YOUR_PROJECT_FOLDER
+    rm -r .git README.md
+    git init
+    ```
+- replace `NAME` and `REPOSITORY` in `Makefile`
+- replace imports in `cmd/main.go` file
+- remove or update `LICENSE.md` file
+- build project `make`
 
 ## Build
 
 ```bash
+make clean
 make build
 ```
 
@@ -34,9 +45,13 @@ bin/go-app-template
 Options:
 
 ```bash
-# help
-bin/go-app-template --help # print all available flags
+# help - prints all available flags
+$ bin/go-app-template --help
+Usage of bin/go-app-template:
+  -version
+        print application version
 
-# version
-bin/go-app-template --version # print application version
+# version - prints application version
+$ bin/go-app-template --version
+go-app-template@master-26a6e8a
 ```
